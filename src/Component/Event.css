@@ -1,0 +1,64 @@
+.event{
+    margin-top: 50px;
+    height: 700px;
+    width: 100vw;
+    padding: 30px 0px;
+    /* background-color: rgba(255, 255, 255, 0.114); */
+}
+
+.event-img{
+    width: 100%;
+    height: 300px;
+}
+
+.event-card{
+    background-color: white;
+    border-radius: 10px ;
+    width: 300px;
+    /* height: 500px; */
+    
+}
+
+.group{
+    display: flex;
+    padding: 20px;
+    gap: 40px;
+}
+
+.event-info{
+    padding: 0px 20px;
+}
+
+.event-head{
+    padding-bottom: 2rem;
+    font-size: 42px;
+    color: white;
+}
+
+#event-name{
+    padding-bottom: 30px;
+}
+
+
+.event-desc{
+    padding: 20px 15px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .event-head{
+        font-size: 36px;
+        text-align: center;
+        /* padding-left: 20px; */
+    }
+    .group{
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+    }
+
+    .event{
+        padding: 50px 0px;
+        height: 1200px;
+    }
+}

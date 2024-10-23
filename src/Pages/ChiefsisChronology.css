@@ -1,0 +1,77 @@
+.chief-section{
+    /* background-color: red; */
+    /* height: 100vh; */
+    padding: 40px 0px;
+    width: 100vw;
+}
+
+#chief-name{
+    text-transform: capitalize;
+}
+
+.keg-year-list{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 10px;
+}
+
+.year a{
+      background-color: white;
+      /* margin: 20px 0px; */
+      padding: 6px;
+      border-radius: 5px;
+       
+}
+
+.card{
+    width: 330px;
+    /* padding: 15px; */
+    height: 450px;
+    background-color: white;
+}
+
+.highlight-new{
+    color: #2BB32A;
+}
+
+.image img{
+    /* background-color: red; */
+    width: 300px;
+    height: 350px;
+}
+
+
+.card-desc{
+    padding: 10px;
+    /* height: 300px; */
+}
+
+.card-groups{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    
+}
+
+.error{
+    color: white;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .chief-card{
+        width: 320px;
+        /* padding: 15px; */
+        height: 300px;
+        background-color: white;
+    
+    }
+
+    .keg-year-list{
+        justify-content: space-around;
+    }
+    
+}
