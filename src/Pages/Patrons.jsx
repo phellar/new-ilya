@@ -36,6 +36,17 @@ const Patrons = () => {
                 </div>
                 <div className="lord-card">
                   <div className="lord-img">
+                    <img src="https://mpfxcjjgxqjenjxhiwju.supabase.co/storage/v1/object/public/image/patrons/RFIL8049.JPG" alt="" />
+                  </div>
+                  <div className="card-desc">
+                    <h2 className='highlight-new'>Adetola Ademola</h2>
+                    <h3>Year of patronization: 2001</h3>
+                    <h3>Patronized by: Oriade 1</h3>
+                    {/* <h3>Patronized by: Chief Ajibade Mattew (Skul boi)</h3> */}
+                  </div>
+                </div>
+                <div className="lord-card">
+                  <div className="lord-img">
                     <img src="https://mpfxcjjgxqjenjxhiwju.supabase.co/storage/v1/object/public/image/patrons/AYAG9283.JPG" alt="" />
                   </div>
                   <div className="card-desc">
@@ -44,17 +55,7 @@ const Patrons = () => {
                     <h3>Patronized by: Chief Olajuyin Sunday</h3>
                   </div>
                 </div>
-                <div className="lord-card">
-                  <div className="lord-img">
-                    <img src="https://mpfxcjjgxqjenjxhiwju.supabase.co/storage/v1/object/public/image/patrons/RFIL8049.JPG" alt="" />
-                  </div>
-                  <div className="card-desc">
-                    <h2 className='highlight-new'>Adetola Ademola</h2>
-                    <h3>Patronized by: Oriade 1</h3>
-                    {/* <h3>Patronized by: Chief Ajibade Mattew (Skul boi)</h3> */}
-                  </div>
-                </div>
-
+               
             </div>
         </div>
       </section>

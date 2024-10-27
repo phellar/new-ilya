@@ -25,11 +25,11 @@ const Header = () => {
           <img src={Logo} className='logo' alt="logo" width={'50'} />
           <ul>
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li> 
+            <li><Link to="/about">About Us</Link></li> 
             <li><Link to="/history-ilya-Odua">History of Ilya Odua</Link></li>
             <li><Link to="/gallery">Gallery</Link></li>
             <li><Link to="/patrons">Patrons</Link></li>
-            <li><Link to="/lord">present lords</Link></li>
+            <li><Link to="/lord">Present G-lords</Link></li>
             <li><Link to="/chiefsischronology">Chiefesis chronology</Link></li>
             <li><Link to="/KegYear">Register as member</Link></li>
           </ul>
@@ -42,9 +42,9 @@ const Header = () => {
           {isToggle && 
           <div className="mobile-menu-item">
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
+            <li><Link to="/about">About Us</Link></li>
             <li><Link to="/history-ilya-Odua">History of Ilya Odua</Link></li>
-            <li><Link to="/lord">present lords</Link></li>
+            <li><Link to="/lord">Present G-lords</Link></li>
             <li><Link to="/patrons">Patrons</Link></li>
             <li><Link to="/gallery">Gallery</Link></li>
             <li><Link to="/chiefsischronology">Chiefesis chronology</Link></li>
