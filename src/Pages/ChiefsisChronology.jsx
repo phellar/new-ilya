@@ -1,5 +1,6 @@
+
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link for navigation
+import { Link } from 'react-router-dom'; 
 import './ChiefsisChronology.css';
 import supabase from '../Config/SupabaseClient';
 import Header from '../Component/Header';
@@ -10,26 +11,28 @@ const ChiefsisChronology = () => {
     const years = Array.from({ length: currentYear - 1985 + 1 }, (_, index) => 1985 + index);
 
     const [fetchError, setFetchError] = useState(null);
-    const [kegYears, setKegYears] = useState([]);
+    const [chiefs, setChiefs] = useState([]);
 
     useEffect(() => {
-        const fetchKegYears = async () => {
+        const fetchChiefs = async () => {
             const { data, error } = await supabase
                 .from('cheif')
-                .select('kegyear')
+                .select('kegyear, portfolio, picture')
+                .eq('portfolio', 'Chief')
+                .order('kegyear', { ascending: true });
+
+
             if (error) {
-                setFetchError('Unable to fetch keg years');
-                setKegYears([]);
+                setFetchError('Unable to fetch chiefs data');
+                setChiefs([]);
                 console.log(error);
-            }
-            if (data) {
-                console.log(data);
-                setKegYears(data.map(item => item.kegyear));
+            } else {
+                setChiefs(data);
                 setFetchError(null);
             }
         };
 
-        fetchKegYears();
+        fetchChiefs();
     }, []);
 
     return (
@@ -41,30 +44,28 @@ const ChiefsisChronology = () => {
                         <h1 className='hhhhhhhh'><span className='highlight'>Ilya Odua</span> Kegite Year</h1>
                         <p>Kindly click on kegyear to view members of the selected year</p>
                     </div>
-                    {/* {fetchError && (<p className='error'>{fetchError}</p>)} */}
+                    
+                    {fetchError && (<p className='error'>{fetchError}</p>)}
 
                     <div className="keg-year-list">
-
-                    {years.map((year) => (
-
-                       
-                        <div
-                        
-                         className="year-box"
-                        style={{ cursor: 'pointer', }}
-                    >
-                        <ul className='year'>
-                            <li>
-                            <Link to={`/members/${year}`} className='highlight-new'>
-                            {year} Keg Year
-                        </Link>
-                            </li>
-                        </ul>
-                       
-                    </div>
-                    
-                    ))}
-
+                        {chiefs.map((chief) => (
+                            <div className="year-box" key={chief.kegyear} style={{ cursor: 'pointer' }}>
+                                <Link to={`/members/${chief.kegyear}`}>
+                                    <div className="data-box">
+                                        <img 
+                                        src={chief.picture} 
+                                        alt={`Chief ${chief.kegyear}`} 
+                                        className="new-chief-img"
+                                        />
+                                        <div className="chief-overlay">
+                                        
+                                            {chief.kegyear} Keg Year
+                                        </div>
+                                    </div>
+                                </Link>
+                                
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -74,3 +75,49 @@ const ChiefsisChronology = () => {
 };
 
 export default ChiefsisChronology;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
