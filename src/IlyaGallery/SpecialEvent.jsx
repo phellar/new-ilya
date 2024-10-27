@@ -90,8 +90,8 @@ const SpecialEvent = () => {
   }, [currentPage]);
 
   return (
-    <div>
-      <h1>SPECIAL EVENTS (OBENGS/REUNION)</h1>
+    <div className="container">
+      <h1 className="title">SPECIAL EVENTS (OBENGS/REUNION)</h1>
 
       {loading ? (
         <p>Loading...</p>

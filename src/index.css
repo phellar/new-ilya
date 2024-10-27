@@ -140,6 +140,9 @@ h1,h2,h3{
 
 
 @media screen and (max-width: 768px) {
+  .title{
+    padding: 0px 20px;
+  }
   
 .info-new{
   width: 350px;

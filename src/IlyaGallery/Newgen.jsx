@@ -99,8 +99,8 @@ const Newgen = () => {
   }, [currentPage]);
 
   return (
-    <div>
-      <h1>NEW GENERATION</h1>
+    <div className="container">
+      <h1 className="title">NEW GENERATION</h1>
 
       {loading ? (
         <p>Loading...</p>

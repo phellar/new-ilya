@@ -99,8 +99,8 @@ const Oldies = () => {
   }, [currentPage]);
 
   return (
-    <div>
-      <h1>OLDIES</h1>
+    <div className="container">
+      <h1 className="title">OLDIES</h1>
 
       {loading ? (
         <p>Loading...</p>

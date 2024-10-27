@@ -10,7 +10,6 @@ import Lord from './Pages/Lord'
 import Patrons from './Pages/Patrons'
 import HistoryIlyaOdua from './Pages/HistoryIlyaOdua'
 import ChiefsisChronology from './Pages/ChiefsisChronology'
-import Upload from './Pages/Upload'
 import Gallery from './Pages/Gallery'
 import Hemisphere from './Pages/Hemisphere'
 import Member from './Pages/Member'
@@ -124,7 +123,6 @@ function App() {
           <Route path= "/lord" element={<Lord/>} />
           <Route path= "/patrons" element={<Patrons/>} />
           <Route path= "/history-ilya-Odua" element={<HistoryIlyaOdua/>} />
-          <Route path= "/upload" element={<Upload/>} />
           <Route path= "/gallery" element={<Gallery/>} />
           <Route path= "/hemisphere" element={<Hemisphere/>} />
           <Route path= "/member/:id" element={<Member/>} />

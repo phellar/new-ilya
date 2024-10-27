@@ -17,8 +17,8 @@ const Gallery = () => {
     <div>
       <div className="container">
         <div className="headdd">
-      <h1 className='hhhhhhhh'>Welcome to <span className='highlight'>Ilya Odua</span> Gallery Page</h1>
-      <p>A Glimpse of Our World in Pictures</p>
+        <h1 className='hhhhhhhh'>Welcome to <span className='highlight'>Ilya Odua</span> Gallery Page</h1>
+        <p>A Glimpse of Our World in Pictures</p>
         </div>
         <Oldies/>
         <Newgen/>

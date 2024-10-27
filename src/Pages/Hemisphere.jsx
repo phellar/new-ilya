@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { FaPlus, FaMinus } from "react-icons/fa";
 import './Hemisphere.css';
 import Header from '../Component/Header';
+import Footer from '../Component/Footer';
+
 
 const Hemisphere = () => {
   // Step 1: Accordion data
@@ -213,6 +215,7 @@ const Hemisphere = () => {
           ))}
         </div>
       </section>
+      <Footer/>
     </>
   );
 };
