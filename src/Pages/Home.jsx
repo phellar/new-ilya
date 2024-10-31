@@ -12,6 +12,7 @@ import { GiPartyPopper } from "react-icons/gi";
 import { TbStairsUp } from "react-icons/tb";
 import './Home.css'
 import { Link } from 'react-router-dom'
+import LiveLink from '../Component/LiveLink'
 // import Baba from '../assets/baba.jpg'
 
 const Home = () => {
@@ -25,12 +26,16 @@ const Home = () => {
           <div className="over">
             <div className="container">
                 <div className="wrapper">
-                        <h1>Welcome to SUPREMOST KEGITES CLUB INTERNATIONAL</h1>
+                          <div className="">
+                            <h3 className='int'>Welcome to</h3>
+                            <h3 className='int-2'>SUPREMOST KEGITES CLUB INTERNATIONAL</h3>
+                          </div>
+                        <h2 class="eksu">EKITI STATE UNIVERSITY</h2>
                         <h2 class="head-1">ILYA ODUA</h2>
                         <p>The Fountain of Karability</p>
-                          <div className="cta">
-                            <Link to='/' className='CTA'>Learn More</Link>
-                            <Link to='/hemisphere' className='out-btn'>Hemisphere</Link>
+                          <div className="center-cta">
+                            <Link to='/history-ilya-Odua' className='CTA'>Learn More</Link>
+                            {/* <Link to='/hemisphere' className='out-btn'>Hemisphere</Link> */}
                           </div>
                       </div>
                       
@@ -136,6 +141,7 @@ const Home = () => {
             </section> */}
 
             <Event/>
+            <LiveLink/>
             <Affiliate/>
             <FAQ/>
             <Contact/>

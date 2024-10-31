@@ -17,6 +17,7 @@ import { BrowserRouter as Router, Route,Routes} from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css'
 import MembersList from './Pages/MembersList'
+import UploadLink from './Admin/UploadLink'
 import About from './Pages/About'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react';
@@ -121,13 +122,14 @@ function App() {
           <Route path= "/kegYear" element={<KegYear/>} />
           <Route path= "/chiefsischronology" element={<ChiefsisChronology/>} />
           <Route path= "/lord" element={<Lord/>} />
+          <Route path= "/hemisphere" element={<Hemisphere/>} />
           <Route path= "/patrons" element={<Patrons/>} />
           <Route path= "/history-ilya-Odua" element={<HistoryIlyaOdua/>} />
           <Route path= "/gallery" element={<Gallery/>} />
-          <Route path= "/hemisphere" element={<Hemisphere/>} />
           <Route path= "/member/:id" element={<Member/>} />
           <Route path= "/members/:kegYear" element={<MembersList />} />
           <Route path= "/about" element={<About />} />
+          <Route path= "/upload" element={<UploadLink />} />
          
           </Routes> 
         </Router>

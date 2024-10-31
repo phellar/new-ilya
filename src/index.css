@@ -60,6 +60,13 @@ small{
   justify-content: space-between;
 }
 
+.center-cta{
+  margin-top: 20px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+}
+
 .highlight{
   color: #2BB32A;
   font-style: italic;

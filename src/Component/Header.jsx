@@ -3,7 +3,7 @@ import './Header.css'
 import { Link } from 'react-router-dom';
 import Logo from '../assets/logo.jpg'
 import { useState } from 'react'
-
+import EksuLogo from '../assets/EKSU.png'
 import { FaBars, FaTimes} from "react-icons/fa";
 
 
@@ -22,16 +22,20 @@ const Header = () => {
     <header>
         <div className="container">
         <nav>
-          <img src={Logo} className='logo' alt="logo" width={'50'} />
+          <div className="box-logo">
+            <img src={EksuLogo} alt="logo" style={{width: 35}} />
+            <img src={Logo} className='logo' alt="logo" width={50} />
+          </div>
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About Us</Link></li> 
             <li><Link to="/history-ilya-Odua">History of Ilya Odua</Link></li>
+            <li><Link to="/hemisphere">Hemisphere</Link></li>
             <li><Link to="/gallery">Gallery</Link></li>
             <li><Link to="/patrons">Patrons</Link></li>
             <li><Link to="/lord">Present G-lords</Link></li>
-            <li><Link to="/chiefsischronology">Chiefesis chronology</Link></li>
-            <li><Link to="/KegYear">Register as member</Link></li>
+            <li><Link to="/chiefsischronology">Chiefesis Chronology</Link></li>
+            <li><Link to="/KegYear">Register as Member</Link></li>
           </ul>
 
 
@@ -44,11 +48,12 @@ const Header = () => {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About Us</Link></li>
             <li><Link to="/history-ilya-Odua">History of Ilya Odua</Link></li>
+            <li><Link to="/hemisphere">Hemisphere</Link></li>
             <li><Link to="/lord">Present G-lords</Link></li>
             <li><Link to="/patrons">Patrons</Link></li>
             <li><Link to="/gallery">Gallery</Link></li>
-            <li><Link to="/chiefsischronology">Chiefesis chronology</Link></li>
-            <li><Link to="/KegYear">Register as member</Link></li>
+            <li><Link to="/chiefsischronology">Chiefesis Chronology</Link></li>
+            <li><Link to="/KegYear">Register as Member</Link></li>
           </div>
             
             

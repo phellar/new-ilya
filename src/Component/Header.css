@@ -9,6 +9,12 @@ nav{
     width: 50px;
 }
 
+.box-logo{
+    display: flex;
+    width: 100px;
+    justify-content: space-between;
+}
+
 header{
     background-color: white;
     padding: 15px;

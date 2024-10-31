@@ -12,7 +12,7 @@ const Event = () => {
             <div className="group">
                 <div className='event-card'>
                    <div className="lord-image">
-                     <img src='https://mpfxcjjgxqjenjxhiwju.supabase.co/storage/v1/object/public/image/Event/HZDK1609.JPG?t=2024-10-11T17%3A30%3A46.999Z' alt="flyer" className='event-img' />
+                     <img src='' alt="flyer" className='event-img' />
                                                 
                     </div>
                     <div className="event-desc">
@@ -27,7 +27,7 @@ const Event = () => {
                 </div>
                 <div className='event-card'>
                    <div className="lord-image">
-                     <img src='https://mpfxcjjgxqjenjxhiwju.supabase.co/storage/v1/object/public/image/Event/cum37.jpeg' alt="flyer" className='event-img' />
+                     <img src='' alt="flyer" className='event-img' />
                                                 
                     </div>
                     <div className="event-desc">
