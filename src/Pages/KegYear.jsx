@@ -47,31 +47,33 @@ const KegYear = () => {
   };
 
   // register member
-  const handleRegister = async (e) => {
-    e.preventDefault();
-  
-    const { FullName, portfolio, kegyear, dob, email, phone } = form;
-    if (!FullName || !portfolio || !dob || !kegyear || !email || !phone) {
-      alert('Please fill all the info');
-      return;
-    }
-  
-    try {
-      setLoading(true); // Start loading spinner
-  
+const handleRegister = async (e) => {
+  e.preventDefault();
+
+  const { FullName, portfolio, kegyear, dob, email, phone } = form;
+  if (!FullName || !portfolio || !dob || !kegyear || !email || !phone) {
+    alert('Please fill all the info');
+    return;
+  }
+
+  try {
+    setLoading(true); // Start loading spinner
+
+    // Only check for existing roles if portfolio is not 'Other'
+    if (portfolio !== 'other') {
       // Check if the portfolio for the selected kegyear already exists in the database
       const { data: existingRole, error: roleCheckError } = await supabase
         .from('cheif')
         .select('*')
         .eq('portfolio', portfolio)
         .eq('kegyear', kegyear);
-  
+
       if (roleCheckError) {
         console.error('Error checking existing role:', roleCheckError);
         setLoading(false); // Stop loading spinner
         return;
       }
-  
+
       // If the role already exists for the selected kegyear, prevent further action
       if (existingRole && existingRole.length > 0) {
         toast.error('This role has already been selected for the chosen year.', {
@@ -87,69 +89,70 @@ const KegYear = () => {
         setLoading(false); // Stop loading spinner
         return;
       }
-  
-      // Get file from input
-      const file = document.querySelector('#picture').files[0];
-  
-      // Ensure a file is selected
-      if (!file) {
-        alert('Please upload a picture');
-        setLoading(false); // Stop loading spinner
-        return;
-      }
-  
-      // Upload the file to the storage bucket
-      const { data: uploadData, error: uploadError } = await supabase
-        .storage
-        .from('chief-image')
-        .upload(`members/${file.name}`, file);
-  
-      if (uploadError) {
-        console.error('Error uploading image:', uploadError);
-        setLoading(false); // Stop loading spinner
-        return;
-      }
-  
-      // Generate the public URL of the uploaded image
-      const { data, error: urlError } = supabase
-        .storage
-        .from('chief-image')
-        .getPublicUrl(`members/${file.name}`, file);
-  
-      if (urlError) {
-        console.error('Error getting public URL:', urlError);
-        setLoading(false); // Stop loading spinner
-        return;
-      }
-  
-      // Insert form data into the database, including the image URL
-      const { error } = await supabase
-        .from('cheif')
-        .insert([{
-          FullName,
-          portfolio,
-          kegyear,
-          dob,
-          email,
-          picture: data.publicUrl,
-          phone
-        }]);
-  
-      if (error) {
-        console.error('Error inserting into database:', error);
-        setLoading(false); // Stop loading spinner
-        return;
-      }
-  
-      notify(); // Show success notification
-      setForm({ FullName: '', portfolio: '', kegyear: '', picture: null, dob: '', email: '', phone: '' });
-      
-    } catch (err) {
-      console.error('Unexpected error:', err);
-    } finally {
-      setLoading(false); // Stop loading spinner after all actions
     }
-  };
+
+    // Get file from input
+    const file = document.querySelector('#picture').files[0];
+
+    // Ensure a file is selected
+    if (!file) {
+      alert('Please upload a picture');
+      setLoading(false); // Stop loading spinner
+      return;
+    }
+
+    // Upload the file to the storage bucket
+    const { data: uploadData, error: uploadError } = await supabase
+      .storage
+      .from('chief-image')
+      .upload(`members/${file.name}`, file);
+
+    if (uploadError) {
+      console.error('Error uploading image:', uploadError);
+      setLoading(false); // Stop loading spinner
+      return;
+    }
+
+    // Generate the public URL of the uploaded image
+    const { data, error: urlError } = supabase
+      .storage
+      .from('chief-image')
+      .getPublicUrl(`members/${file.name}`, file);
+
+    if (urlError) {
+      console.error('Error getting public URL:', urlError);
+      setLoading(false); // Stop loading spinner
+      return;
+    }
+
+    // Insert form data into the database, including the image URL
+    const { error } = await supabase
+      .from('cheif')
+      .insert([{
+        FullName,
+        portfolio,
+        kegyear,
+        dob,
+        email,
+        picture: data.publicUrl,
+        phone
+      }]);
+
+    if (error) {
+      console.error('Error inserting into database:', error);
+      setLoading(false); // Stop loading spinner
+      return;
+    }
+
+    notify(); // Show success notification
+    setForm({ FullName: '', portfolio: '', kegyear: '', picture: null, dob: '', email: '', phone: '' });
+    
+  } catch (err) {
+    console.error('Unexpected error:', err);
+  } finally {
+    setLoading(false); // Stop loading spinner after all actions
+  }
+};
   
 
   return (
@@ -261,6 +264,7 @@ const KegYear = () => {
                     <option value="hod">Head of Drumitos (HOD)</option>
                     <option value="dod">Director of Drumitos (DOD)</option>
                     <option value="hos">Head of Songitos (HOS)</option>
+                    <option value="other">Other</option>
                 </select>
               </div>
 
