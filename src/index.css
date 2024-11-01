@@ -149,15 +149,32 @@ h1,h2,h3{
   padding-top: 30px;
 }
 
+.audio{
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
 .audio a{
-  color: #2BB32A;
+  color: white;
   font-size: 18px;
   font-weight: 500;
+}
+
+.audio li{
+  color: white;
 }
 
 
 
 @media screen and (max-width: 768px) {
+  .just-section{
+    padding: 20px 40px;
+  }
+  .audio{
+    flex-direction: column;
+    gap: 10px;
+  }
   .audio a{
     padding: 0px 20px;
   }
