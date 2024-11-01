@@ -144,6 +144,17 @@ h1,h2,h3{
   border-radius: 5px;
 }
 
+.just-section{
+  /* height: 50vh; */
+  padding-top: 30px;
+}
+
+.audio a{
+  color: #2BB32A;
+  font-size: 18px;
+  font-weight: 500;
+}
+
 
 
 @media screen and (max-width: 768px) {

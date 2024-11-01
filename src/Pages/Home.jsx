@@ -13,6 +13,7 @@ import { TbStairsUp } from "react-icons/tb";
 import './Home.css'
 import { Link } from 'react-router-dom'
 import LiveLink from '../Component/LiveLink'
+import Audio from '../Component/Audio'
 // import Baba from '../assets/baba.jpg'
 
 const Home = () => {
@@ -141,6 +142,7 @@ const Home = () => {
             </section> */}
 
             <Event/>
+            <Audio/>
             <LiveLink/>
             <Affiliate/>
             <FAQ/>

@@ -27,7 +27,7 @@ const LiveLink = () => {
   }, []);
 
   return (
-    <section>
+    <section className='just-section'>
       <div className="container">
         <div className="">
         <h2 className='event-head'>Join Our Live Event</h2>
