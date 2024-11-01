@@ -2,6 +2,9 @@ import React from 'react'
 import './Event.css'
 import FullBtn from '../Component/FullBtn';
 import { GiTicket } from "react-icons/gi";
+import Com from '../assets/com.jpeg'
+import Beach from '../assets/beach.jpeg'
+
 const Event = () => {
   return (
     <section className='event'>
@@ -12,7 +15,7 @@ const Event = () => {
             <div className="group">
                 <div className='event-card'>
                    <div className="lord-image">
-                     <img src='' alt="flyer" className='event-img' />
+                     <img src={Beach} alt="flyer" className='event-img' />
                                                 
                     </div>
                     <div className="event-desc">
@@ -21,13 +24,13 @@ const Event = () => {
                         <h4>time: undisclosed</h4>
                         <h4>location: undisclosed</h4> */}
                        
-                        <FullBtn >Buy Ticket <GiTicket /> </FullBtn>
+                        {/* <FullBtn >Buy Ticket <GiTicket /> </FullBtn> */}
                     </div>
 
                 </div>
                 <div className='event-card'>
                    <div className="lord-image">
-                     <img src='' alt="flyer" className='event-img' />
+                   <img src={Com} alt="flyer" className='event-img' />
                                                 
                     </div>
                     <div className="event-desc">
@@ -36,7 +39,7 @@ const Event = () => {
                         <h4>time: undisclosed</h4>
                         <h4>location: undisclosed</h4> */}
                        
-                        <FullBtn >Buy Ticket <GiTicket /> </FullBtn>
+                        {/* <FullBtn >Buy Ticket <GiTicket /> </FullBtn> */}
                     </div>
 
                 </div>

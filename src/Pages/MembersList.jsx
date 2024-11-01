@@ -60,7 +60,7 @@ const MembersList = () => {
                                         <h2 className='highlight-new' id='chief-name'>{member.FullName}</h2>
                                          <h2>AB {member.portfolio}</h2>
                                          <h3><MdOutlinePhone /> 0{member.phone}</h3>
-                                         {/* <h3><MdOutlineEmail /> {member.email}</h3> */}
+                                         <h3><MdOutlineEmail /> {member.email}</h3>
                                          {/* <h3><CiCalendarDate /> {member.dob}</h3> */}
                                      </div>
                                     <h3></h3>

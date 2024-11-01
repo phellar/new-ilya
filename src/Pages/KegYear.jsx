@@ -57,15 +57,44 @@ const KegYear = () => {
     }
   
     try {
-
       setLoading(true); // Start loading spinner
-
+  
+      // Check if the portfolio for the selected kegyear already exists in the database
+      const { data: existingRole, error: roleCheckError } = await supabase
+        .from('cheif')
+        .select('*')
+        .eq('portfolio', portfolio)
+        .eq('kegyear', kegyear);
+  
+      if (roleCheckError) {
+        console.error('Error checking existing role:', roleCheckError);
+        setLoading(false); // Stop loading spinner
+        return;
+      }
+  
+      // If the role already exists for the selected kegyear, prevent further action
+      if (existingRole && existingRole.length > 0) {
+        toast.error('This role has already been selected for the chosen year.', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+        setLoading(false); // Stop loading spinner
+        return;
+      }
+  
       // Get file from input
       const file = document.querySelector('#picture').files[0];
   
       // Ensure a file is selected
       if (!file) {
         alert('Please upload a picture');
+        setLoading(false); // Stop loading spinner
         return;
       }
   
@@ -73,7 +102,7 @@ const KegYear = () => {
       const { data: uploadData, error: uploadError } = await supabase
         .storage
         .from('chief-image')
-        .upload(`members/${file.name}`, file); 
+        .upload(`members/${file.name}`, file);
   
       if (uploadError) {
         console.error('Error uploading image:', uploadError);
@@ -93,18 +122,15 @@ const KegYear = () => {
         return;
       }
   
-      
-  
-  
       // Insert form data into the database, including the image URL
-      const { ChiefData, error } = await supabase
+      const { error } = await supabase
         .from('cheif')
-        .insert([{ 
-          FullName, 
-          portfolio, 
-          kegyear, 
-          dob, 
-          email, 
+        .insert([{
+          FullName,
+          portfolio,
+          kegyear,
+          dob,
+          email,
           picture: data.publicUrl,
           phone
         }]);
@@ -112,23 +138,18 @@ const KegYear = () => {
       if (error) {
         console.error('Error inserting into database:', error);
         setLoading(false); // Stop loading spinner
-      } 
-
+        return;
+      }
   
       notify(); // Show success notification
-      setForm({ FullName: '', portfolio: '', kegyear: '', picture: null, dob: '', email: '' });
-       
-      
+      setForm({ FullName: '', portfolio: '', kegyear: '', picture: null, dob: '', email: '', phone: '' });
       
     } catch (err) {
       console.error('Unexpected error:', err);
-    }
-    finally {
+    } finally {
       setLoading(false); // Stop loading spinner after all actions
     }
   };
-  
-  
   
 
   return (

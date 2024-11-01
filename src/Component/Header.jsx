@@ -33,7 +33,7 @@ const Header = () => {
             <li><Link to="/hemisphere">Hemisphere</Link></li>
             <li><Link to="/gallery">Gallery</Link></li>
             <li><Link to="/patrons">Patrons</Link></li>
-            <li><Link to="/lord">Present G-lords</Link></li>
+            <li><Link to="/lord">Present G-Lords</Link></li>
             <li><Link to="/chiefsischronology">Chiefesis Chronology</Link></li>
             <li><Link to="/KegYear">Register as Member</Link></li>
           </ul>
@@ -49,7 +49,7 @@ const Header = () => {
             <li><Link to="/about">About Us</Link></li>
             <li><Link to="/history-ilya-Odua">History of Ilya Odua</Link></li>
             <li><Link to="/hemisphere">Hemisphere</Link></li>
-            <li><Link to="/lord">Present G-lords</Link></li>
+            <li><Link to="/lord">Present G-Lords</Link></li>
             <li><Link to="/patrons">Patrons</Link></li>
             <li><Link to="/gallery">Gallery</Link></li>
             <li><Link to="/chiefsischronology">Chiefesis Chronology</Link></li>
